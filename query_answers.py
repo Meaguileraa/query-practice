@@ -32,6 +32,17 @@ ratings = Rating.query.filter_by(score=5).all()
 
 # 5 Find the rating for the movie whose id is 7, from the user whose id is 6.
 
+rating = Rating.query.filter_by(user_id=7, movie_id=7).first()
+# or
+# rating = db.session.query(Rating).filter(Rating.user_id==7, Rating.movie_id==6).first()
+
 
 
 # 6 Find all ratings that are larger than 3.
+
+ratings = Rating.query.filter(Rating.score > 3).all()
+# or
+# ratings = db.session.query(Rating).filter(Rating.score > 3).all()
+
+
+
